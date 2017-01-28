@@ -52,12 +52,6 @@ print_int_array_f_fp_t print_int_array_f_fp = print_int_array_f;
 
 int main(int argc, char** argv) {
 
-    if(argc < 2){
-        return 0;
-    }
-
-    const int_array_t a = arg_int_array(argc, argv);
-    const int_array_t b = new_int_array();
-    print_int_array_f(print_int_array_f_fp);
+    print_int_array_f(new_int_array_fp);
 
 }

@@ -46,6 +46,15 @@ void print_int_array_f(new_int_array_fp_t a){
     printf("\n");
 }
 
+void print_arg_array_f(arg_int_array_fp_t a){
+    const int_array_t b = a();
+    const int s = sizeof(b.n) / sizeof(int);
+    for (int i = 0; i < s; i++) {
+        printf("%d ",b.n[i]);
+    }
+    printf("\n");
+}
+
 arg_int_array_fp_t arg_int_array_fp = arg_int_array;
 print_int_array_fp_t print_int_array_fp = print_int_array;
 new_int_array_fp_t new_int_array_fp = new_int_array;

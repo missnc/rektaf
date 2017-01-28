@@ -52,6 +52,6 @@ print_int_array_f_fp_t print_int_array_f_fp = print_int_array_f;
 
 int main(int argc, char** argv) {
 
-    print_int_array_f(new_int_array_fp);
+    print_int_array_f_fp(new_int_array_fp);
 
 }

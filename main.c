@@ -54,6 +54,6 @@ print_arg_array_f_fp_t print_arg_array_f_fp = print_arg_array_f;
 
 int main(int argc, char** argv) {
 
-    print_int_array_arg_f_fp(arg_int_array_fp(argc,argv));
+    print_arg_array_f_fp(arg_int_array_fp(argc,argv));
 
 }

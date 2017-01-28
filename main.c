@@ -6,6 +6,11 @@ typedef struct int_array_t {
    int n[2];
 } int_array_t;
 
+typedef int_array_t (*arg_int_array_fp_t)(int argc, char** argv);
+typedef void (*print_int_array_fp_t)(int_array_t a);
+typedef int_array_t (*new_int_array_fp_t)();
+typedef void (*print_int_array_f_fp_t)(new_int_array_fp_t a);
+
 int_array_t arg_int_array(int argc, char** argv) {
     if(argc <= 4 && (strcmp(argv[1], "-print") == 0)){
         const int x = atoi(argv[2]);
@@ -40,16 +45,9 @@ void print_int_array_f(new_int_array_fp_t a){
     printf("\n");
 }
 
-typedef int_array_t (*arg_int_array_fp_t)(int argc, char** argv);
 arg_int_array_fp_t arg_int_array_fp = arg_int_array;
-
-typedef void (*print_int_array_fp_t)(int_array_t a);
 print_int_array_fp_t print_int_array_fp = print_int_array;
-
-typedef int_array_t (*new_int_array_fp_t)();
 new_int_array_fp_t new_int_array_fp = new_int_array;
-
-typedef void (*print_int_array_f_fp_t)(new_int_array_fp_t a);
 print_int_array_f_fp_t print_int_array_f_fp = print_int_array_f;
 
 int main(int argc, char** argv) {

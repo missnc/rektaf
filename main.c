@@ -10,6 +10,7 @@ typedef int_array_t (*arg_int_array_fp_t)(int argc, char** argv);
 typedef void (*print_int_array_fp_t)(int_array_t a);
 typedef int_array_t (*new_int_array_fp_t)();
 typedef void (*print_int_array_f_fp_t)(new_int_array_fp_t a);
+typedef int_array_t (*print_arg_array_f_fp_t)(arg_int_array_fp_t a);
 
 int_array_t arg_int_array(int argc, char** argv) {
     if(argc <= 4 && (strcmp(argv[1], "-print") == 0)){
@@ -49,9 +50,10 @@ arg_int_array_fp_t arg_int_array_fp = arg_int_array;
 print_int_array_fp_t print_int_array_fp = print_int_array;
 new_int_array_fp_t new_int_array_fp = new_int_array;
 print_int_array_f_fp_t print_int_array_f_fp = print_int_array_f;
+print_arg_array_f_fp_t print_arg_array_f_fp = print_arg_array_f;
 
 int main(int argc, char** argv) {
 
-    print_int_array_f_fp(new_int_array_fp);
+    print_int_array_arg_f_fp(arg_int_array_fp(argc,argv));
 
 }

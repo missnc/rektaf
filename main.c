@@ -53,6 +53,7 @@ int main(int argc, char** argv) {
 
     if(argc < 2) { return 0; }
 
-    print_int_array(subone_int_array(swap_int_array_f(arg_int_array_f(argc, argv))));
+    print_int_array(addone_int_array(swap_int_array_f(arg_int_array_f(argc, argv))));
+    printf("Rekted");
 
 }
